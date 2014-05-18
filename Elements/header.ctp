@@ -6,10 +6,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			 <a class="brand" href="#"><?php echo Configure::read('Site.title'); ?></a>
 			<div class="nav-collapse collapse">
 				<?php echo $this->Custom->menu('main', array('dropdown' => true)); ?>
 			</div>
+			<?php echo $this->Html->link(Configure::read('Site.title'), '/', array('class' => 'brand')) ?>
 		</div>
 	</div>
 </header>
