@@ -8,15 +8,21 @@
 	<div class="contact-form">
 	<?php
 		echo $this->Form->create('Message', array(
-			'url' => array(
-				'plugin' => 'contacts',
+			'url'           => array(
+				'plugin'     => 'contacts',
 				'controller' => 'contacts',
-				'action' => 'view',
+				'action'     => 'view',
 				$contact['Contact']['alias'],
 			),
-		));
-		$this->Form->inputDefaults(array(
-			'class' => 'span8',
+			'inputDefaults' => array(
+				'div'       => 'form-group',
+				'label'     => array(
+					'class' => 'col col-md-3 control-label'
+				),
+				'wrapInput' => 'col col-md-9',
+				'class'     => 'form-control'
+			),
+			'class'         => 'form-horizontal'
 		));
 		echo $this->Form->input('Message.name', array(
 			'placeholder' => __('Your name'),
@@ -34,10 +40,9 @@
 			echo $this->Recaptcha->display_form();
 		endif;
 		echo $this->Form->end(array(
-			'class' => 'btn btn-primary',
-			'label' => __('Send'),
-			)
-		);
+			'div'   => 'col col-md-9 col-md-offset-3',
+			'class' => 'btn btn-default'
+		));
 	?>
 	</div>
 	<?php endif; ?>

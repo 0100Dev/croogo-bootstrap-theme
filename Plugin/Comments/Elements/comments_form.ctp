@@ -17,11 +17,21 @@
 		if (isset($parentId) && $parentId != null) {
 			$formUrl[] = $parentId;
 		}
-
-		echo $this->Form->create('Comment', array('url' => $formUrl));
-			$this->Form->inputDefaults(array(
-				'class' => 'span8',
-			));
+	?>
+	<div class="row">
+	<?php
+	echo $this->Form->create('Comment', array(
+		'url'           => $formUrl,
+		'inputDefaults' => array(
+			'div'       => 'form-group',
+			'label'     => array(
+				'class' => 'col col-md-3 control-label'
+			),
+			'wrapInput' => 'col col-md-9',
+			'class'     => 'form-control'
+		),
+		'class'         => 'form-horizontal'
+	));
 			if ($this->Session->check('Auth.User.id')) {
 				echo $this->Form->input('Comment.name', array(
 					'placeholder' => __('Name'),
@@ -50,8 +60,9 @@
 				echo $this->Recaptcha->display_form();
 			}
 		echo $this->Form->end(array(
-			'class' => 'btn btn-primary',
-			'label' => __('Post comment'),
+			'div'   => 'col col-md-9 col-md-offset-3',
+			'class' => 'btn btn-default'
 		));
 	?>
+	</div>
 </div>
