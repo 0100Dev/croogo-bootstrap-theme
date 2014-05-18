@@ -32,7 +32,7 @@ class CustomHelper extends Helper {
 			'dropdownClass' => 'dropdown',
 			'dropdownMenuClass' => 'dropdown-menu',
 			'toggle' => 'dropdown-toggle',
-			'menuClass' => 'nav nav-bar',
+			'menuClass' => 'nav navbar-nav',
 			'element' => 'menu',
 		);
 		$options = Hash::merge($_options, $options);
