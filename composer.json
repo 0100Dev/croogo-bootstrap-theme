@@ -1,0 +1,9 @@
+{
+	"name"       : "cvo-technologies/croogo-base-theme",
+	"description": "CVO-Technologies Croogo base theme",
+	"type"       : "croogo-theme",
+	"license"    : "proprietary",
+	"require"    : {
+		"composer/installers": "~1.0"
+	}
+}
