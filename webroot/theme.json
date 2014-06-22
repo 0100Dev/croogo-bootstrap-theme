@@ -1,11 +1,11 @@
 {
-	"name" : "BsCroogo",
-	"description" : "Bootstrap Theme for Croogo",
+	"name" : "Croogo base theme",
+	"description" : "CVO-Technologies Croogo base theme",
 	"screenshot" : "/screenshot.png",
 
-	"author" : "Steven van Oosten",
-	"authorEmail" : "stevenvanoosten@outlook.com",
-	"authorUrl" : "https://twitter.com/stevenvanoosten",
+	"author" : "CVO-Technologies",
+	"authorEmail" : "team@cvo-technologies.com",
+	"authorUrl" : "http://cvo-technologies.com",
 
 	"menus" : [
 		"main",
