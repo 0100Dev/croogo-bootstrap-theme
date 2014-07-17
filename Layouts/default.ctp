@@ -18,10 +18,11 @@ else {
 		echo $this->Html->charset();
 		?>
 		<title><?php echo $title_for_layout; ?> &raquo; <?php echo Configure::read('Site.title'); ?></title>
+
+		<!-- Other -->
 		<?php
 		echo $this->Meta->meta();
 		echo $this->Layout->feed();
-		echo $this->Blocks->get('css');
 		echo $this->Html->meta(array(
 			'name'    => 'viewport',
 			'content' => 'width=device-width, initial-scale=1'
@@ -38,10 +39,19 @@ else {
 
 		<!-- scripts -->
 		<?php
+		// Croogo JavaScript
+		echo $this->Layout->js();
+
+		// Scripts for our layout
 		echo $this->Html->script('jquery.min');
 		echo $this->Html->script('bootstrap.min');
 		?>
-	
+
+		<!-- Plugins -->
+		<?php
+		echo $this->fetch('css');
+		echo $this->Blocks->get('script');
+		?>
 	</head>
 	<body>
 		<?php echo $this->element('header'); ?>
@@ -79,9 +89,7 @@ else {
 			</div>
 		</footer>
 
-	    <?php      
-			echo $this->Layout->js();
-			echo $this->Blocks->get('script');
+	    <?php
 			echo $this->Blocks->get('scriptBottom');
 			echo $this->Js->writeBuffer();
 		?>
