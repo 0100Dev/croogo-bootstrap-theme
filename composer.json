@@ -3,6 +3,24 @@
 	"description": "CVO-Technologies Bootstrap theme",
 	"type"       : "croogo-theme",
 	"license"    : "proprietary",
+	"authors"    : [
+		{
+			"name"    : "Marlin Cremers",
+			"email"   : "m.cremers@cvo-technologies.com",
+			"homepage": "http://marlinc.nl",
+			"role"    : "Developer"
+		},
+		{
+			"name"    : "Laszlo Van Oudenhove",
+			"email"   : "l.vanoudenhove@cvo-technologies.com",
+			"role"    : "Designer"
+		},
+		{
+			"name"    : "Steven van Oosten",
+			"email"   : "stevenvanoosten@outlook.com",
+			"role"    : "Original developer"
+		}
+	],
 	"require"    : {
 		"composer/installers": "~1.0"
 	}
