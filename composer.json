@@ -1,6 +1,6 @@
 {
-	"name"       : "cvo-technologies/croogo-base-theme",
-	"description": "CVO-Technologies Croogo base theme",
+	"name"       : "cvo-technologies/croogo-bootstrap",
+	"description": "CVO-Technologies Bootstrap theme",
 	"type"       : "croogo-theme",
 	"license"    : "proprietary",
 	"require"    : {
