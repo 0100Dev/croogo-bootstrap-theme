@@ -1,4 +1,11 @@
 <?php
+
+namespace CvoTechnologies\Bootstrap\View\Helper;
+
+use Cake\Routing\Router;
+use Cake\Utility\Hash;
+use Cake\View\Helper;
+
 /**
  * Custom Helper
  *
@@ -12,12 +19,8 @@ class CustomHelper extends Helper {
  * @access public
  */
 	public $helpers = array(
-		'Html' => array(
-			'className' => 'Croogo.CroogoHtml',
-		),
-		'Form' => array(
-			'className' => 'Croogo.CroogoHtml',
-		),
+		'Html',
+		'Form',
 		'Session',
 		'Js',
 		'Layout',
@@ -63,22 +66,17 @@ class CustomHelper extends Helper {
 		$output = '';
 		foreach ($links AS $link) {
 			$linkAttr = array(
-				'id' => 'link-' . $link['Link']['id'],
-				'rel' => $link['Link']['rel'],
-				'target' => $link['Link']['target'],
-				'title' => $link['Link']['description'],
-				'class' => $link['Link']['class'],
+				'id' => 'link-' . $link->id,
+				'rel' => $link->rel,
+				'target' => $link->target,
+				'title' => $link->description,
+				'class' => $link->class,
 			);
 
 			foreach ($linkAttr AS $attrKey => $attrValue) {
 				if ($attrValue == null) {
 					unset($linkAttr[$attrKey]);
 				}
-			}
-
-			// if link is in the format: controller:contacts/action:view
-			if (strstr($link['Link']['link'], 'controller:')) {
-				$link['Link']['link'] = $this->Layout->linkStringToArray($link['Link']['link']);
 			}
 
 			// Remove locale part before comparing links
@@ -88,19 +86,19 @@ class CustomHelper extends Helper {
 				$currentUrl = $this->_View->request->url;
 			}
 
-			if (Router::url($link['Link']['link']) == Router::url('/' . $currentUrl)) {
+			if (Router::url($link->link->getUrl()) == Router::url('/' . $currentUrl)) {
 				if (!isset($linkAttr['class'])) {
 					$linkAttr['class'] = '';
 				}
 				$linkAttr['class'] .= ' ' . $options['selected'];
 			}
 
-			$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link']);
+			$linkOutput = $this->Html->link($link->title, $link->link->getUrl());
 			if (isset($link['children']) && count($link['children']) > 0) {
 				if (!isset($linkAttr['class'])) {
 					$linkAttr['class'] = '';
 				}
-				$linkOutput = $this->Html->link($link['Link']['title'] . '<b class="caret"></b>', $link['Link']['link'], array('class' => $options['toggle'], 'data-toggle' => $options['dropdownClass'], 'escape' => false));
+				$linkOutput = $this->Html->link($link->title . '<b class="caret"></b>', $link['Link']['link'], array('class' => $options['toggle'], 'data-toggle' => $options['dropdownClass'], 'escape' => false));
 				$linkAttr['class'] .= ' ' . $options['dropdownClass'];
 				$linkOutput .= $this->nestedLinks($link['children'], $options, $depth + 1);
 			}

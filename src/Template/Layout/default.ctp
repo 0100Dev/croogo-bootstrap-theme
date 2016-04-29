@@ -1,5 +1,7 @@
 <?php
 // Adjusting content width
+use Cake\Core\Configure;
+
 if ($this->Regions->blocks('left') and $this->Regions->blocks('right')) {
 	$span = "col-md-6";
 }
@@ -21,7 +23,7 @@ else {
 
 		<!-- Other -->
 		<?php
-		echo $this->Meta->meta();
+//		echo $this->Meta->meta();
 		echo $this->Layout->feed();
 		echo $this->Html->meta(array(
 			'name'    => 'viewport',
@@ -67,7 +69,7 @@ else {
 				<div class="<?php echo $span; ?>">
 				<?php
 					echo $this->Layout->sessionFlash();
-					echo $content_for_layout;
+					echo $this->fetch('content');
 				?>
 				</div>
 

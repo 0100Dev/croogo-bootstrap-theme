@@ -1,0 +1,28 @@
+{
+    "name": "Croogo base theme",
+    "description": "CVO-Technologies Croogo base theme",
+    "screenshot": "/img/screenshot.png",
+    "author": "CVO-Technologies",
+    "authorEmail": "team@cvo-technologies.com",
+    "authorUrl": "http://cvo-technologies.com",
+    "menus": [
+        "main",
+        "footer"
+    ],
+    "regions": [
+        "left",
+        "right",
+        "region1"
+    ],
+    "settings": {
+        "prefixes": {
+            "": {
+                "helpers": {
+                    "Custom": {
+                        "className": "CvoTechnologies/Bootstrap.Custom"
+                    }
+                }
+            }
+        }
+    }
+}
