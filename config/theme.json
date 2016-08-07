@@ -19,7 +19,7 @@
             "": {
                 "helpers": {
                     "Custom": {
-                        "className": "CvoTechnologies/Bootstrap.Custom"
+                        "className": "CvoTechnologies/CroogoBootstrapTheme.Custom"
                     }
                 }
             }

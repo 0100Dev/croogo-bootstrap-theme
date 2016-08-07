@@ -1,6 +1,6 @@
 <?php
 
-namespace CvoTechnologies\Bootstrap\View\Helper;
+namespace CvoTechnologies\CroogoBootstrapTheme\View\Helper;
 
 use Cake\Routing\Router;
 use Cake\Utility\Hash;
