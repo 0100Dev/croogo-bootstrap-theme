@@ -19,7 +19,7 @@ else {
 		<?php
 		echo $this->Html->charset();
 		?>
-		<title><?php echo $title_for_layout; ?> &raquo; <?php echo Configure::read('Site.title'); ?></title>
+		<title><?= $this->fetch('title'); ?> &raquo; <?php echo Configure::read('Site.title'); ?></title>
 
 		<!-- Other -->
 		<?php
