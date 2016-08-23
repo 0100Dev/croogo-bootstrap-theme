@@ -21,9 +21,30 @@
             "role": "Original developer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/CVO-Technologies/croogo-bootstrap/issues",
+        "irc": "irc://irc.freenode.org/cvo-technologies",
+        "source": "https://github.com/CVO-Technologies/croogo-bootstrap"
+    },
+    "require": {
+        "croogo/croogo": "^3.0",
+        "friendsofcake/bootstrap-ui": "^0.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "cakephp/cakephp-codesniffer": "^2.1"
+    },
     "autoload": {
         "psr-4": {
             "CvoTechnologies\\CroogoBootstrapTheme\\": "src"
         }
-    }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump",
+            "Croogo\\Install\\ComposerInstaller::postAutoloadDump"
+        ]
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
