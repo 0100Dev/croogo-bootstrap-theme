@@ -40,10 +40,10 @@ class CustomHelper extends Helper {
 		);
 		$options = Hash::merge($_options, $options);
 
-		if (!isset($this->_View->viewVars['menus_for_layout'][$menuAlias])) {
+		if (!isset($this->_View->viewVars['menusForLayout'][$menuAlias])) {
 			return false;
 		}
-		$menu = $this->_View->viewVars['menus_for_layout'][$menuAlias];
+		$menu = $this->_View->viewVars['menusForLayout'][$menuAlias];
 		$output = $this->_View->element($options['element'], array(
 			'menu' => $menu,
 			'options' => $options,
